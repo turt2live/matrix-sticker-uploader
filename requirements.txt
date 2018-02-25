@@ -1,0 +1,4 @@
+requests
+argparse
+python-magic
+python-magic-bin
