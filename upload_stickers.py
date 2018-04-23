@@ -23,7 +23,7 @@ for expression in args.files:
 
 report = []
 
-def persist_thumbnail(homeserver, access_token, mimetype, original_mxc, height=100, width=100):
+def persist_thumbnail(homeserver, access_token, mimetype, original_mxc, height=512, width=512):
     mxc_id = original_mxc[6:]
 
     params = {'height': height,
@@ -69,6 +69,8 @@ for filename, mimetype in files:
                                               mxc)
 
             content_object['thumbnail'] = thumbnail_mxc
+            content_object['thumbnail_width'] = 512
+            content_object['thumbnail_height'] = 512
 
         report.append(content_object)
 
